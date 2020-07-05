@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot name="treasurebox">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.042765 0.098510 -0.151801' rpy='-0.020579 0.091078 3.029769'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/treasurebox/meshes/treasurebox_base.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="-0.0247962935701 0.0718427072105 -0.0109052125142" rpy="0 0 0 "/>
+    <axis xyz="0.0271231379404 0.999631875208 -0.000670414422631"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="-0.048836709718 0.00375054716121 -0.0604506706675" rpy="-2.82010091234 -1.49858720717 -0.42082671679"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.039599 0.098987 0.017727' rpy='-0.050909 -0.129937 3.140724'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/treasurebox/meshes/treasurebox_top.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+</robot>

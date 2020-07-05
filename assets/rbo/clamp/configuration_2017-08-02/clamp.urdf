@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot name="clamp">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='-0.072995 -0.379894 -0.055280' rpy='-0.272061 -0.208156 2.788240'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/clamp/meshes/clamp_base.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_0_1" type="prismatic">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.0840625863598 -0.178481242992 -0.00813120561192" rpy="0 0 0 "/>
+    <axis xyz="0.0215877778934 0.999607233913 0.0178702477485"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-3.12337982126 0.0211650806641 -2.13353635405"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='0.088498 0.012487 0.021321' rpy='2.843021 0.206721 1.459733'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/clamp/meshes/clamp_handle.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+</robot>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<robot name="foldingrule">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='-0.088962 -0.110941 -0.101719' rpy='-0.763750 0.094724 0.797108'/>
+      <geometry>
+        <mesh filename="meshes/fr_left.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='-0.088962 -0.110941 -0.101719' rpy='-0.763750 0.094724 0.797108'/>
+      <geometry>
+        <mesh filename="meshes/fr_left.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.0292465661625 0.133419924593 0.0147344520771" rpy="0 0 0 "/>
+    <axis xyz="0.595566420931 -0.345890832972 0.725024254715"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="0.0176596122858 0.12750786836 0.0435596665941" rpy="-0.438511310443 -0.56945116537 -3.01605226181"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_1_2" type="revolute">
+    <parent link="rb1_marker"/>
+    <child link="rb2"/>
+    <origin xyz="-0.00405045472126 -0.0620555875401 0.0121410645552" rpy="0 0 0 "/>
+    <axis xyz="-0.0189492079864 -0.00123730529387 0.999819682039"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_1_fixed" type="fixed">
+    <parent link="rb2"/>
+    <child link="rb2_marker"/>
+      <origin xyz="0.00523592858036 -0.200565972854 -0.00192454443712" rpy="-3.10273870655 0.0366810522555 3.01291055085"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.002675 0.057480 -0.011549' rpy='-1.290115 0.123020 -2.280432'/>
+      <geometry>
+        <mesh filename="meshes/fr_middle.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='-0.002675 0.057480 -0.011549' rpy='-1.290115 0.123020 -2.280432'/>
+      <geometry>
+        <mesh filename="meshes/fr_middle.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+  <link name ="rb2">
+  </link>
+  <link name ="rb2_marker">
+    <visual>
+       <origin xyz='0.015145 0.106250 0.014812' rpy='1.575553 0.063516 2.072520'/>
+      <geometry>
+        <mesh filename="meshes/fr_right.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <coliision>
+       <origin xyz='0.015145 0.106250 0.014812' rpy='1.575553 0.063516 2.072520'/>
+      <geometry>
+        <mesh filename="meshes/fr_right.obj"  scale="1 1 1" />
+      </geometry>
+    </coliision>
+
+  </link>
+</robot>

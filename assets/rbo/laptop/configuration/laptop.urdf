@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<robot name="laptop">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.063000 -0.113482 -0.126385' rpy='-0.755153 0.607483 1.148811'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/laptop/meshes/laptop_bottom.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='0.063000 -0.113482 -0.126385' rpy='-0.755153 0.607483 1.148811'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/laptop/meshes/laptop_bottom.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.172305754336 -0.0303916797293 -0.245846501443" rpy="0 0 0 "/>
+    <axis xyz="-0.538005551938 0.345021877855 0.76909682738"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="0.120648955673 0.0820182979187 0.0478960629268" rpy="2.6271467368 -0.863000298554 2.49360071165"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='0.113315 -0.181156 -0.038097' rpy='-0.179603 -1.218206 -3.017080'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/laptop/meshes/laptop_top.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='0.113315 -0.181156 -0.038097' rpy='-0.179603 -1.218206 -3.017080'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/laptop/meshes/laptop_top.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

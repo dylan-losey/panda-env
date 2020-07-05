@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<robot name="tripod">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.168361 -0.143058 -0.376338' rpy='-1.694255 -0.728874 0.656518'/>
+      <geometry>
+        <mesh filename="meshes/tripod_base.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='0.168361 -0.143058 -0.376338' rpy='-1.694255 -0.728874 0.656518'/>
+      <geometry>
+        <mesh filename="meshes/tripod_base.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+  <joint name="j_0_1" type="prismatic">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="-0.0487419676256 -0.300246492684 0.118170579751" rpy="0 0 0 "/>
+    <axis xyz="-0.569383950091 -0.377767794532 0.730132461129"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-2.22159273119 -0.442188349541 1.76162962228"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_1_2" type="revolute">
+    <parent link="rb1_marker"/>
+    <child link="rb2"/>
+    <origin xyz="0.0443188759183 -0.174435438979 0.0298826280876" rpy="0 0 0 "/>
+    <axis xyz="-0.0810523396826 0.996708934762 0.00134818306789"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_1_fixed" type="fixed">
+    <parent link="rb2"/>
+    <child link="rb2_marker"/>
+      <origin xyz="-0.101828422227 -0.00762316302123 -0.0474401751833" rpy="2.57196895832 -0.110135904072 1.63434688073"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.004922 0.287107 0.024934' rpy='3.119540 -0.823431 -3.032967'/>
+      <geometry>
+        <mesh filename="meshes/tripod_rod.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='-0.004922 0.287107 0.024934' rpy='3.119540 -0.823431 -3.032967'/>
+      <geometry>
+        <mesh filename="meshes/tripod_rod.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+  <link name ="rb2">
+  </link>
+  <link name ="rb2_marker">
+    <visual>
+      <origin xyz='0.256600 0.072647 0.120465' rpy='3.118098 -0.142170 1.448767'/>
+      <geometry>
+        <mesh filename="meshes/tripod_top.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='0.256600 0.072647 0.120465' rpy='3.118098 -0.142170 1.448767'/>
+      <geometry>
+        <mesh filename="meshes/tripod_top.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

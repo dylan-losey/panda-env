@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot name="pliers">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='-0.095382 0.092912 -0.006890' rpy='-0.012197 0.205743 1.281811'/>
+      <geometry>
+        <mesh filename="meshes/plier_right.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='-0.095382 0.092912 -0.006890' rpy='-0.012197 0.205743 1.281811'/>
+      <geometry>
+        <mesh filename="meshes/plier_right.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.0223569265859 0.133487863666 -0.0160430758933" rpy="0 0 0 "/>
+    <axis xyz="0.131946910132 0.097630903871 0.986437134092"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="-0.125186808686 -0.0532721485993 0.0220988416077" rpy="-3.10727506782 0.115711308822 -0.960168900302"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.107652 -0.060779 -0.043692' rpy='-2.762002 -0.504377 -1.745148'/>
+      <geometry>
+        <mesh filename="meshes/plier_left.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz='-0.107652 -0.060779 -0.043692' rpy='-2.762002 -0.504377 -1.745148'/>
+      <geometry>
+        <mesh filename="meshes/plier_left.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

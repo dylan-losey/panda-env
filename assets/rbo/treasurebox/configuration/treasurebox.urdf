@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<robot name="treasurebox">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.041452 0.098650 -0.146288' rpy='0.009149 0.093931 3.041509'/>
+      <geometry>
+        <mesh filename="meshes/treasurebox_base.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='0.041452 0.098650 -0.146288' rpy='0.009149 0.093931 3.041509'/>
+      <geometry>
+        <mesh filename="meshes/treasurebox_base.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="-0.0243168690753 0.0818998621794 -0.0117003168088" rpy="0 0 0 "/>
+    <axis xyz="0.0599421016456 0.998083486338 -0.0153720119126"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="-0.0578269719136 0.00287228552699 -0.0515860010135" rpy="3.04906621054 -1.50930234804 0.0403797653295"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.039460 0.106952 0.018187' rpy='-0.001364 -0.034712 -3.121127'/>
+      <geometry>
+        <mesh filename="meshes/treasurebox_top.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz='-0.039460 0.106952 0.018187' rpy='-0.001364 -0.034712 -3.121127'/>
+      <geometry>
+        <mesh filename="meshes/treasurebox_top.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

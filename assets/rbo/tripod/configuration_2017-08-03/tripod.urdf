@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot name="tripod">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.173131 -0.106711 -0.348556' rpy='-1.822664 -0.791293 0.969150'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/tripod/meshes/tripod_base.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_0_1" type="prismatic">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="-0.0557422834615 -0.30153227017 0.112436414637" rpy="0 0 0 "/>
+    <axis xyz="-0.576042484972 -0.396680299208 0.714716584198"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-2.27168823976 -0.470613714689 1.75246146617"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_1_2" type="revolute">
+    <parent link="rb1_marker"/>
+    <child link="rb2"/>
+    <origin xyz="0.037575760954 -0.184474986612 0.0280732165517" rpy="0 0 0 "/>
+    <axis xyz="0.0505822345588 -0.998534848066 -0.0192248470896"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_1_fixed" type="fixed">
+    <parent link="rb2"/>
+    <child link="rb2_marker"/>
+      <origin xyz="-0.10603294918 -0.00539413476512 -0.00487914155183" rpy="2.88451335023 0.21992877598 1.55489524731"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='0.018653 0.288958 0.047173' rpy='3.119540 -0.823431 -3.032967'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/tripod/meshes/tripod_rod.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <link name ="rb2">
+  </link>
+  <link name ="rb2_marker">
+    <visual>
+      <origin xyz='0.266677 0.095476 0.024630' rpy='-2.759276 -0.382808 1.363461'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/tripod/meshes/tripod_top.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+</robot>

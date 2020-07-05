@@ -1,0 +1,9 @@
+name: foldingrule
+base_marker: "/TransparentBoxWith4Markers"
+link_name_prefix: "rb"
+link_ids: {1: "0", 4: "1", 2: "2" }
+joints:
+- {rb1_id: 1, rb2_id: 4, type: REVOLUTE}
+- {rb1_id: 4, rb2_id: 2, type: REVOLUTE}
+meshes: {"rb0": "foldingrule/meshes/fr_left.dae", "rb1": "foldingrule/meshes/fr_middle.dae", "rb2": "foldingrule/meshes/fr_right.dae"}
+mesh_poses: {"rb0": "<origin xyz='-0.019761 -0.155827 0.000482' rpy='-2.441904 -0.132735 0.987755'/>", "rb1": "<origin xyz='0.003655 -0.016847 -0.022524' rpy='-1.597983 -0.031794 0.939435'/>", "rb2": "<origin xyz='0.015763 -0.046168 0.017512' rpy='1.581930 0.012702 2.290536'/>"}

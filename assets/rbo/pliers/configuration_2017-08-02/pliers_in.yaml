@@ -1,0 +1,8 @@
+name: pliers
+base_marker: "/CreditCardWith4Markers"
+link_name_prefix: "rb"
+link_ids: {4: "0", 2: "1"}
+joints:
+- {rb1_id: 4, rb2_id: 2, type: REVOLUTE}
+meshes: {"rb0": "pliers/meshes/plier_right.dae", "rb1": "pliers/meshes/plier_left.dae"}
+mesh_poses: {"rb0": "<origin xyz='0.113459 0.022103 -0.004631' rpy='0.081767 0.166139 -1.655230'/>", "rb1": "<origin xyz='-0.072164 -0.043532 -0.077714' rpy='-2.355783 -0.190300 -1.876381'/>"}

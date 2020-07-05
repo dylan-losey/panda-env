@@ -1,0 +1,9 @@
+name: rubikscube
+base_marker: "/CreditCardWith4Markers"
+link_name_prefix: "rb"
+link_ids: {4: "0", 2: "1"}
+joints:
+- {rb1_id: 4, rb2_id: 2, type: REVOLUTE}
+meshes: {"rb0": "rubikscube/meshes/rc_bottom.dae", "rb1": "rubikscube/meshes/rc_top.dae"}
+mesh_poses: {"rb0": "<origin xyz='0.013544 0.023828 -0.070847' rpy='-0.057180 -0.461618 -1.583298'/>", "rb1": "<origin xyz='0.056608 0.037683 0.056077' rpy='1.454341 -0.051151 -1.987933'/>"}
+

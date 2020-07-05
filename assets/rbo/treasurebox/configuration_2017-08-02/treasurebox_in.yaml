@@ -1,0 +1,8 @@
+name: treasurebox
+base_marker: "/CreditCardWith4Markers"
+link_name_prefix: "rb"
+link_ids: {4: "0", 2: "1"}
+joints:
+- {rb1_id: 4, rb2_id: 2, type: REVOLUTE}
+meshes: {"rb0": "treasurebox/meshes/treasurebox_base.dae", "rb1": "treasurebox/meshes/treasurebox_top.dae"}
+mesh_poses: {"rb0": "<origin xyz='0.042765 0.098510 -0.151801' rpy='-0.020579 0.091078 3.029769'/>", "rb1": "<origin xyz='-0.039599 0.098987 0.017727' rpy='-0.050909 -0.129937 3.140724'/>"}

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot name="rubikscube">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.013544 0.023828 -0.070847' rpy='-0.057180 -0.461618 -1.583298'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/rubikscube/meshes/rc_bottom.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="-0.0666413818615 0.0342963365575 -0.0565174419351" rpy="0 0 0 "/>
+    <axis xyz="-0.998187925491 0.0558232951436 0.0224638625865"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="0.00346645152116 0.0651248873899 -0.00615567880302" rpy="-1.71724658277 -0.658770689999 -1.4319974881"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='0.056608 0.037683 0.056077' rpy='1.454341 -0.051151 -1.987933'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/rubikscube/meshes/rc_top.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+</robot>

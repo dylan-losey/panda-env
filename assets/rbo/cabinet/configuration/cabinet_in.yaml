@@ -1,0 +1,9 @@
+name: cabinet
+base_marker: "/CreditCardWith4Markers"
+link_name_prefix: "rb"
+link_ids: {4: "0", 2: "1", 1: "2" }
+joints:
+- {rb1_id: 4, rb2_id: 2, type: PRISMATIC}
+- {rb1_id: 4, rb2_id: 1, type: PRISMATIC}
+meshes: {"rb0": "cabinet/meshes/cabinet.dae", "rb1": "cabinet/meshes/cabinet_drawer_4th.dae", "rb2": "cabinet/meshes/cabinet_drawer_top.dae"}
+mesh_poses: {"rb0": "<origin xyz='-0.314060 0.196507 0.054883' rpy='0.003277 -0.094095 -0.102833'/>", "rb1": "<origin xyz='0.213141 -0.130815 0.179854' rpy='1.570923 -0.074211 3.102909'/>", "rb2": "<origin xyz='0.232805 0.032723 -0.259769' rpy='0.545144 -0.793681 2.536280'/>"}

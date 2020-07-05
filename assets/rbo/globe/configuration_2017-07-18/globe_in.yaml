@@ -1,0 +1,8 @@
+name: globe
+base_marker: "/BlackEdge01With4Makers"
+link_name_prefix: "rb"
+link_ids: {2: "0", 1: "1"}
+joints:
+- {rb1_id: 2, rb2_id: 1, type: REVOLUTE}
+meshes: {"rb0": "globe/meshes/globe_base.dae", "rb1": "globe/meshes/globe_sphere.dae"}
+mesh_poses: {"rb0": "<origin xyz='0.134201 0.028644 -0.201127' rpy='1.544267 -1.265865 -1.388046'/>", "rb1": "<origin xyz='-0.049149 0.089968 -0.112483' rpy='3.012065 1.349311 -3.110684'/>"}

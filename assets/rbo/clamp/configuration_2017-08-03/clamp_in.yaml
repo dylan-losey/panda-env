@@ -1,0 +1,8 @@
+name: clamp
+base_marker: "/BlackEdge01With4Makers"
+link_name_prefix: "rb"
+link_ids: {2: "0", 4: "1"}
+joints:
+- {rb1_id: 2, rb2_id: 4, type: PRISMATIC}
+meshes: {"rb0": "clamp/meshes/clamp_base.dae", "rb1": "clamp/meshes/clamp_handle.dae"}
+mesh_poses: {"rb0": "<origin xyz='0.009557 0.454370 0.093844' rpy='2.259261 -0.936207 -2.450349'/>", "rb1": "<origin xyz='-0.017570 0.118246 -0.010171' rpy='-0.916813 0.793361 0.306321'/>"}

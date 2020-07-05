@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot name="microwave">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='-0.037517 -0.154535 -0.300424' rpy='0.565469 -1.518863 2.568221'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/microwave/meshes/microwave.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.0491888572364 0.138689505084 -0.50366401109" rpy="0 0 0 "/>
+    <axis xyz="-0.998210936327 0.00987153809342 -0.0589701562974"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="-0.0229595400091 0.0842538818972 0.399088030911" rpy="-3.09454086444 -0.0532649162143 -1.56854246795"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.066152 0.088149 0.213487' rpy='-1.581407 -0.158159 -3.113634'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/microwave/meshes/microwave_door.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+</robot>

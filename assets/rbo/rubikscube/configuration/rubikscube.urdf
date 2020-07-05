@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot name="rubikscube">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.007022 0.034791 -0.070582' rpy='-0.061974 -0.341371 -1.612810'/>
+      <geometry>
+        <mesh filename="meshes/rc_bottom.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz='0.007022 0.034791 -0.070582' rpy='-0.061974 -0.341371 -1.612810'/>
+      <geometry>
+        <mesh filename="meshes/rc_bottom.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="-0.0655963542563 0.0292959514851 -0.0573983987997" rpy="0 0 0 "/>
+    <axis xyz="-0.999109474145 0.0240329176694 0.0346796416074"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="0.000470677971037 -0.0409860935988 0.0513168087626" rpy="0.663745912054 1.46660650938 0.63596860131"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='0.058688 0.036090 0.047669' rpy='1.626453 -0.143578 2.647488'/>
+      <geometry>
+        <mesh filename="meshes/rc_top.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz='0.058688 0.036090 0.047669' rpy='1.626453 -0.143578 2.647488'/>
+      <geometry>
+        <mesh filename="meshes/rc_top.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

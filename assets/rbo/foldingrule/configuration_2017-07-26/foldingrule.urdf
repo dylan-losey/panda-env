@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot name="foldingrule">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='-0.019761 -0.155827 0.000482' rpy='-2.441904 -0.132735 0.987755'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/foldingrule/meshes/fr_left.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.00540850949985 0.117853058337 -0.0620448158783" rpy="0 0 0 "/>
+    <axis xyz="-0.658335935419 0.410320271084 0.631055521546"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="0.0170770485692 0.0963769950822 -0.0447823827532" rpy="-0.549668424378 -0.642512137482 0.229001153833"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_1_2" type="revolute">
+    <parent link="rb1_marker"/>
+    <child link="rb2"/>
+    <origin xyz="0.00339890014867 0.0928533797647 -0.00725997781431" rpy="0 0 0 "/>
+    <axis xyz="-0.0817305279205 -0.0478181020802 0.995506679997"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_1_fixed" type="fixed">
+    <parent link="rb2"/>
+    <child link="rb2_marker"/>
+      <origin xyz="0.020131879643 0.133163148151 0.00703877578827" rpy="-3.13234446232 0.165790060224 -3.10538425561"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='0.003655 -0.016847 -0.022524' rpy='-1.597983 -0.031794 0.939435'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/foldingrule/meshes/fr_middle.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <link name ="rb2">
+  </link>
+  <link name ="rb2_marker">
+    <visual>
+      <origin xyz='0.015763 -0.046168 0.017512' rpy='1.581930 0.012702 2.290536'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/foldingrule/meshes/fr_right.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+</robot>

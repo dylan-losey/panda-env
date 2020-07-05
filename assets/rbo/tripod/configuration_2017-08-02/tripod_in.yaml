@@ -1,0 +1,9 @@
+name: tripod
+base_marker: "/TransparentBoxWith4Markers"
+link_name_prefix: "rb"
+link_ids: {1: "0", 2: "1", 4: "2" }
+joints:
+- {rb1_id: 1, rb2_id: 2, type: PRISMATIC}
+- {rb1_id: 2, rb2_id: 4, type: REVOLUTE}
+meshes: {"rb0": "tripod/meshes/tripod_base_ft.dae", "rb1": "tripod/meshes/tripod_rod.dae", "rb2": "tripod/meshes/tripod_top_no_camera.dae"}
+mesh_poses: {"rb0": "<origin xyz='0.092833 0.064784 -0.146054' rpy='1.005964 0.181086 -0.489690'/>", "rb1": "<origin xyz='0.032863 0.324750 0.039053' rpy='0.403002 -1.458750 -0.368001'/>", "rb2": "<origin xyz='0.046393 0.001543 -0.041883' rpy='1.673629 0.337335 -2.081458'/>"}

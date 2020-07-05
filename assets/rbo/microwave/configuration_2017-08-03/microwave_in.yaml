@@ -1,0 +1,8 @@
+name: microwave
+base_marker: "/CreditCardWith4Markers"
+link_name_prefix: "rb"
+link_ids: {4: "0", 2: "1"}
+joints:
+- {rb1_id: 4, rb2_id: 2, type: REVOLUTE}
+meshes: {"rb0": "microwave/meshes/microwave.dae", "rb1": "microwave/meshes/microwave_door.dae"}
+mesh_poses: {"rb0": "<origin xyz='0.056548 0.010073 -0.049423' rpy='1.606167 0.000079 -1.642569'/>", "rb1": "<origin xyz='-0.086801 0.093563 0.212745' rpy='-1.569729 0.020246 -3.140622'/>"}

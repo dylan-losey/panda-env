@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot name="globe">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.134201 0.028644 -0.201127' rpy='1.544267 -1.265865 -1.388046'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/globe/meshes/globe_base.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.112827626961 0.0769681379313 -0.26023652027" rpy="0 0 0 "/>
+    <axis xyz="0.0692656093156 -0.417084054731 0.906224677801"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="-0.184778028883 -0.000950895735824 0.0135191242097" rpy="0.96920987265 0.338639521178 -2.21123982949"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.049149 0.089968 -0.112483' rpy='3.012065 1.349311 -3.110684'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/globe/meshes/globe_sphere.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+</robot>

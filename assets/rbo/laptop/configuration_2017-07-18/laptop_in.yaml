@@ -1,0 +1,8 @@
+name: laptop
+base_marker: "/TransparentBoxWith4Markers"
+link_name_prefix: "rb"
+link_ids: {1: "0", 4: "1"}
+joints:
+- {rb1_id: 1, rb2_id: 4, type: REVOLUTE}
+meshes: {"rb0": "laptop/meshes/laptop_bottom.dae", "rb1": "laptop/meshes/laptop_top.dae"}
+mesh_poses: {"rb0": "<origin xyz='0.058927 -0.090175 -0.151480' rpy='-0.726852 0.490066 1.157193'/>", "rb1": "<origin xyz='0.118160 -0.188569 -0.004876' rpy='0.135739 -1.170886 3.003704'/>"}

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot name="globe">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.125412 0.002854 -0.197627' rpy='1.723450 -1.341989 -1.522147'/>
+      <geometry>
+        <mesh filename="meshes/globe_base.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='0.125412 0.002854 -0.197627' rpy='1.723450 -1.341989 -1.522147'/>
+      <geometry>
+        <mesh filename="meshes/globe_base.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.112844837585 0.0549196945724 -0.227765200614" rpy="0 0 0 "/>
+    <axis xyz="0.0740405494663 -0.420722793517 0.904162777408"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="-0.103521448607 0.143286190463 0.0739459001654" rpy="-1.80412822586 -0.024485887913 1.10441133552"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.125441 0.088169 -0.129482' rpy='-1.936752 0.767602 1.007135'/>
+      <geometry>
+        <mesh filename="meshes/globe_sphere.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz='-0.125441 0.088169 -0.129482' rpy='-1.936752 0.767602 1.007135'/>
+      <geometry>
+        <mesh filename="meshes/globe_sphere.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+</robot>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot name="microwave">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.080462 0.000215 -0.059802' rpy='1.657594 0.068107 -1.652794'/>
+      <geometry>
+        <mesh filename="meshes/microwave.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='0.080462 0.000215 -0.059802' rpy='1.657594 0.068107 -1.652794'/>
+      <geometry>
+        <mesh filename="meshes/microwave.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.07205093735 0.190694365814 -0.353022975905" rpy="0 0 0 "/>
+    <axis xyz="0.984974124857 -0.162502852506 0.0584704736547"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="-0.0565951532963 -0.380803829114 -0.0996908344172" rpy="0.479541606394 -1.40259591186 -2.11289192677"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.086981 0.102000 0.220229' rpy='-1.544815 -0.073080 3.141268'/>
+      <geometry>
+        <mesh filename="meshes/microwave_door.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz='-0.086981 0.102000 0.220229' rpy='-1.544815 -0.073080 3.141268'/>
+      <geometry>
+        <mesh filename="meshes/microwave_door.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+</robot>
